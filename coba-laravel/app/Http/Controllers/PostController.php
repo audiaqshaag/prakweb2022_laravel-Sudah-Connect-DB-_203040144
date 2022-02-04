@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Post;
 
@@ -10,9 +11,9 @@ class PostController extends Controller
     public function index()
     {
         return view('blog', [
-            "title" => "Post",
+            "title" => "All Post",
             // "posts" => Post::all()
-            "posts" => Post::latest()->get()
+            "posts" => Post::with(['author', 'Category'])->latest()->get()
         ]);
     }
 

@@ -1,7 +1,7 @@
 @extends('layouts/main')
 @section('container')
 
-    <h1>Post Categories</h1>
+    <h1>Categories</h1>
     @foreach ($categories as $category)
 
         <ul>
