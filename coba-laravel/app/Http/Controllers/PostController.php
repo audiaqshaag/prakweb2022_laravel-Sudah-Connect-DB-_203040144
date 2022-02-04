@@ -13,7 +13,7 @@ class PostController extends Controller
         return view('blog', [
             "title" => "All Post",
             // "posts" => Post::all()
-            "posts" => Post::with(['author', 'Category'])->latest()->get()
+            "posts" => Post::latest()->get()
         ]);
     }
 
