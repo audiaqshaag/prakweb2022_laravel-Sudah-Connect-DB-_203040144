@@ -12,16 +12,41 @@
                     </button>
                 </div>
 
-             
+
+            @endif
+
+            @if (session()->has('loginError'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ session('loginError') }}
+                    <button type="button" class="close justify-content-right" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+
             @endif
 
             <h1 class="h3 mb-3 font-weight-normal text-center">Please Login</h1>
-            <form class="form-signin">
+            <form action="login" method="post" class="form-signin">
+                @csrf
 
-                <label for="inputEmail" class="sr-only">Email address</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                <label for="inputPassword" class="sr-only">Password</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <div class="form-floating">
+                    <input type="email" name="email" id="email" class="form-control  @error('email')is-invalid @enderror"
+                        placeholder="email" required autofocus>
+                    <label for="email">Email Adress</label>
+                    @error('email')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
+                <div class="form-floating">
+                    <input type="password" name="password" id="password" class="form-control  " placeholder="password"
+                        required autofocus>
+                    <label for="password">Password</label>
+                </div>
+
                 <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
 
 
