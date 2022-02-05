@@ -14,14 +14,24 @@
                     <a class="nav-link {{ $title === 'About' ? 'active' : '' }}" href="/about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ ($title === 'All Post'||$title === 'Post By Category : Web Programming'||$title === 'Post By Category : Personal') ? 'active' : '' }}" href="/blog">Blog</a>
+                    <a class="nav-link {{ $title === 'All Post' || $title === 'Post By Category : Web Programming' || $title === 'Post By Category : Personal' ? 'active' : '' }}"
+                        href="/blog">Blog</a>
                 </li>
-                
+
                 <li class="nav-item">
-                    <a class="nav-link {{ $title === 'Categories' ? 'active' : '' }}" href="/categories">Categories</a>
+                    <a class="nav-link {{ $title === 'Categories' ? 'active' : '' }}"
+                        href="/categories">Categories</a>
                 </li>
 
             </ul>
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a href="login" class="nav-link {{ $title === 'login' ? 'active' : '' }}"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+                </li>
+            </ul>
+
         </div>
     </div>
 </nav>
