@@ -52,7 +52,7 @@
                 </div>
 
 
-                <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
 
 
 
